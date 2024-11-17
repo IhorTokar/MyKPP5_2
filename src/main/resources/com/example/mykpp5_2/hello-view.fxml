@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mykpp5_2.HelloController">
+   <children>
+      <AnchorPane fx:id="main_page" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="615.0">
+         <children>
+            <TabPane prefHeight="400.0" prefWidth="615.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab fx:id="musicGroup_tab" text="Музичні група">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="musicGroup_TableView" layoutX="244.0" layoutY="47.0" onMouseClicked="#musicGroupChoice" prefHeight="212.0" prefWidth="354.0">
+                                 <columns>
+                                    <TableColumn fx:id="musicGroup_name_column" prefWidth="48.0" text="ID" />
+                                    <TableColumn fx:id="musicGroup_groupName_column" prefWidth="133.60003662109375" text="Назва музичної групи" />
+                                    <TableColumn fx:id="musicGroup_owner_surname_column" prefWidth="165.5999755859375" text="Фамілія керівника групи" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="36.0" layoutY="47.0" text="ID" />
+                              <TextField fx:id="musicGroup_ID_TextField" layoutX="36.0" layoutY="65.0" />
+                              <TextField fx:id="musicGroup_name_TextField" layoutX="37.0" layoutY="128.0" />
+                              <TextField fx:id="musicGroup_Owner_surName_TextField" layoutX="37.0" layoutY="186.0" />
+                              <Label layoutX="34.0" layoutY="100.0" text="Назва муз. групи" />
+                              <Label layoutX="34.0" layoutY="162.0" text="Власник групи" />
+                              <Button fx:id="musicGroup_AddBtn" layoutX="244.0" layoutY="280.0" mnemonicParsing="false" onAction="#onAddMusicGroup" prefHeight="44.0" prefWidth="70.0" text="Добавити" />
+                              <Button fx:id="musicGroup_DeleteBtn" layoutX="328.0" layoutY="280.0" mnemonicParsing="false" onAction="#onDeleteMusicGroup" prefHeight="45.0" prefWidth="72.0" text="Видалити" />
+                              <Button fx:id="musicGroup_UpdateBtn" layoutX="417.0" layoutY="280.0" mnemonicParsing="false" onAction="#onUpdateMusicGroup" prefHeight="46.0" prefWidth="84.0" text="Реадагувати" />
+                              <Label layoutX="34.0" layoutY="235.0" prefHeight="44.0" prefWidth="154.0" text="Остайня буква в прізвищі керівника групи:" wrapText="true" />
+                              <Label fx:id="last_letter_ofSurName" layoutX="127.0" layoutY="257.0" />
+                              <Button fx:id="ShowUpperLetter" layoutX="34.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleShowLastLetterOfLeaderSurname" text="Показати" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="tour_tab" text="Гастрольні поїздки">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tour_TableView" layoutX="174.0" layoutY="62.0" onMouseClicked="#tourChoice" prefHeight="200.0" prefWidth="425.0">
+                                 <columns>
+                                    <TableColumn fx:id="tour_ID_Column" prefWidth="55.20001220703125" text="ID" />
+                                    <TableColumn fx:id="tour_musicGroup_column" prefWidth="75.0" text="Муз. група" />
+                                    <TableColumn fx:id="tour_town_column" prefWidth="115.20001220703125" text="Місто проведення" />
+                                    <TableColumn fx:id="tour_year_column" prefWidth="51.20001220703125" text="Рік " />
+                                    <TableColumn fx:id="tour_concert_count_Column" prefWidth="124.0" text="Кількість концерів" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="16.0" layoutY="37.0" text="ID" />
+                              <TextField fx:id="tour_ID_TextField" layoutX="15.0" layoutY="62.0" />
+                              <TextField fx:id="tour_town_TextField" layoutX="15.0" layoutY="102.0" />
+                              <TextField fx:id="tour_year_TextField" layoutX="15.0" layoutY="149.0" />
+                              <TextField fx:id="tour_concert_count_TextField" layoutX="14.0" layoutY="195.0" />
+                              <ChoiceBox fx:id="tour_ChoiseBox_musicGroup" layoutX="13.0" layoutY="236.0" prefWidth="150.0" />
+                              <Label layoutX="14.0" layoutY="88.0" text="Місто проведення" />
+                              <Label layoutX="14.0" layoutY="128.0" text="Рік " />
+                              <Label layoutX="14.0" layoutY="177.0" text="Кількість концертів" />
+                              <Label layoutX="14.0" layoutY="221.0" text="Музична група" />
+                              <Label layoutX="240.0" layoutY="265.0" prefHeight="54.0" prefWidth="164.0" text="Показати гастрольну поїздку з максимальною кількістю концертів:" wrapText="true" />
+                              <Button fx:id="tour_ShowMaxConcerTourBtn" layoutX="308.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleShowMaxConcertTour" text="Показати" />
+                              <Label layoutX="463.0" layoutY="269.0" prefHeight="53.0" prefWidth="125.0" text="Показати список гастрольних поїздок у певне місто:" wrapText="true" />
+                              <Button fx:id="tour_ShowConcertsInTown" layoutX="535.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleShowToursInTown" text="Показати" />
+                              <Button fx:id="tour_AddBtn" layoutX="14.0" layoutY="283.0" mnemonicParsing="false" onAction="#onAddTour" text="Добавити" />
+                              <Button fx:id="tour_DeleteBtn" layoutX="15.0" layoutY="318.0" mnemonicParsing="false" onAction="#onDeleteTour" text="Видалити" />
+                              <Button fx:id="tour_UpdateBtn" layoutX="94.0" layoutY="283.0" mnemonicParsing="false" onAction="#onUpdateTour" text="Реадагувати" />
+                              <Button fx:id="tour_ShowFullList" layoutX="450.0" layoutY="24.0" mnemonicParsing="false" onAction="#initializeTourData" text="Показати повний список" />
+                              <ChoiceBox fx:id="tour_townForExample_ChoiseBox" layoutX="449.0" layoutY="331.0" prefWidth="150.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

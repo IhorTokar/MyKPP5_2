@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mykpp4.Lab2Controller">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TabPane fx:id="Lab2_tablePane" layoutY="27.0" prefHeight="374.0" prefWidth="797.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="client_tab" text="Клієнти">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="270.0" prefWidth="797.0">
+                                 <children>
+                                    <TextField fx:id="Lab2_Sur_Name_textField" layoutX="105.0" layoutY="122.0" promptText="Фамілія" />
+                                    <TextField fx:id="Lab2_Name_textField" layoutX="105.0" layoutY="87.0" promptText="Ім'я" />
+                                    <TextField fx:id="Lab2_Gmail_textField" layoutX="105.0" layoutY="193.0" promptText="Електронна пошта" />
+                                    <TextField fx:id="Lab2_PhoneNum_textField" layoutX="105.0" layoutY="230.0" promptText="Номер телефону" />
+                                    <Label layoutX="70.0" layoutY="91.0" text="Ім'я:" />
+                                    <Label layoutX="48.0" layoutY="126.0" text="Фамілія:" />
+                                    <Label layoutX="31.0" layoutY="161.0" text="По-батькові" />
+                                    <Label layoutX="37.0" layoutY="197.0" text="Ел. пошта:" />
+                                    <Label layoutY="234.0" text="Номер телефону:" />
+                                    <TextField fx:id="Lab2_Third_name_textField" layoutX="105.0" layoutY="157.0" promptText="По-батькові" />
+                                    <TableView fx:id="Lab2_client_TableWiew" layoutX="264.0" layoutY="44.0" onMouseClicked="#clientChoise" prefHeight="234.0" prefWidth="519.0">
+                                      <columns>
+                                          <TableColumn fx:id="Lab2_client_ID_table" prefWidth="23.20001220703125" text="ID" />
+                                        <TableColumn fx:id="Lab2_client_name_table" prefWidth="74.4000244140625" text="Імя" />
+                                        <TableColumn fx:id="Lab2_client_surName_table" prefWidth="88.0" text="Фамілія" />
+                                          <TableColumn fx:id="Lab2_client_thirdName_table" prefWidth="101.5999755859375" text="По-Батькові" />
+                                          <TableColumn fx:id="Lab2_client_gmail_table" prefWidth="119.20001220703125" text="Ел. пошта" />
+                                          <TableColumn fx:id="Lab2_client_phoneNum_table" prefWidth="111.199951171875" text="Номер телефону" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="74.0" layoutY="59.0" text="ID:" />
+                                    <TextField fx:id="Lab2_client_ID_textField" layoutX="106.0" layoutY="55.0" promptText="ID" />
+                                    <TextField fx:id="client_Search" layoutX="264.0" layoutY="1.0" onKeyTyped="#clientSearch" promptText="Пошук🔍" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="clear_clientBtn" layoutX="14.0" layoutY="270.0" mnemonicParsing="false" onAction="#clearClientFields" prefHeight="39.0" prefWidth="75.0" text="Очистити" />
+                              <Button fx:id="add_clientBtn" layoutX="266.0" layoutY="281.0" mnemonicParsing="false" onAction="#addClient" prefHeight="39.0" prefWidth="74.0" text="Добавити" />
+                              <Button fx:id="update_clientBtn" layoutX="355.0" layoutY="281.0" mnemonicParsing="false" onAction="#EditClient" prefHeight="39.0" prefWidth="86.0" text="Реадагувати" />
+                              <Button fx:id="delete_clientBtn" layoutX="451.0" layoutY="281.0" mnemonicParsing="false" onAction="#deleteClient" prefHeight="39.0" prefWidth="86.0" text="Видалити" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="service_tab" text="Послуги">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="647.0">
+                           <children>
+                              <AnchorPane prefHeight="270.0" prefWidth="775.0">
+                                 <children>
+                                    <TextField fx:id="Lab2_service_price_textField1" layoutX="105.0" layoutY="122.0" promptText="Ціна послгуги" />
+                                    <TextField fx:id="Lab2_service_name_textField" layoutX="105.0" layoutY="87.0" promptText="Назва" />
+                                    <Label layoutX="24.0" layoutY="91.0" text="Назва послуги:" />
+                                    <Label layoutX="28.0" layoutY="126.0" text="Ціна послуги:" />
+                                    <TableView fx:id="Lab2_service_TableWiew" layoutX="355.0" layoutY="42.0" onMouseClicked="#serviceChoise" prefHeight="228.0" prefWidth="248.0">
+                                      <columns>
+                                        <TableColumn fx:id="Lab2_service_ID_table" prefWidth="40.800048828125" text="ID" />
+                                        <TableColumn fx:id="Lab2_service_table" prefWidth="109.5999755859375" text="Послуга" />
+                                          <TableColumn fx:id="Lab2_service_price_table" prefWidth="94.4000244140625" text="Ціна послуги" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="Lab2_service_ID_textField" layoutX="106.0" layoutY="52.0" promptText="ID" />
+                                    <Label layoutX="87.0" layoutY="56.0" text="ID:" />
+                                    <TextField fx:id="serviceSearch" layoutX="355.0" layoutY="1.0" onKeyTyped="#serviceSearch" promptText="Пошук🔍" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="add_serviceBtn" layoutX="345.0" layoutY="288.0" mnemonicParsing="false" onAction="#addService" prefHeight="37.0" prefWidth="70.0" text="Добавити" />
+                              <Button fx:id="update_serviceBtn" layoutX="427.0" layoutY="288.0" mnemonicParsing="false" onAction="#EditService" prefHeight="38.0" prefWidth="78.0" text="Реадагувати" />
+                              <Button fx:id="delete_serviceBtn" layoutX="515.0" layoutY="288.0" mnemonicParsing="false" onAction="#deleteService" prefHeight="38.0" prefWidth="75.0" text="Видалити" />
+                              <Button fx:id="clear_serviceBtn" layoutX="31.0" layoutY="264.0" mnemonicParsing="false" onAction="#clearServiceFields" prefHeight="37.0" prefWidth="78.0" text="Очистити" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="entries_tab" text="Записи">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="270.0" prefWidth="775.0">
+                                 <children>
+                                    <Label layoutX="38.0" layoutY="46.0" prefHeight="28.0" prefWidth="76.0" text="П.І.Б клієнта:" />
+                                    <Label layoutX="57.0" layoutY="79.0" text="Ел.пошта:" />
+                                    <Label layoutX="13.0" layoutY="104.0" text="Номер телефону:" />
+                                    <Label layoutX="59.0" layoutY="189.0" text="Послуги:" />
+                                    <Label fx:id="Lab2_gmail_textDisplay" layoutX="122.0" layoutY="78.0" prefHeight="18.0" prefWidth="106.0" />
+                                    <Label fx:id="Lab2_phone_textDisplay" layoutX="122.0" layoutY="103.0" prefHeight="18.0" prefWidth="132.0" />
+                                    <TableView fx:id="Lab2_entries_TableWiew" layoutX="293.0" layoutY="42.0" onMouseClicked="#entriesChoise" prefHeight="234.0" prefWidth="407.0">
+                                      <columns>
+                                        <TableColumn fx:id="Lab2_entries_ID_table" prefWidth="48.0" text="ID" />
+                                        <TableColumn fx:id="Lab2_entries_User_table" prefWidth="102.4000244140625" text="П.І,Б" />
+                                          <TableColumn fx:id="Lab2_entries_services_table" prefWidth="87.20001220703125" text="Послуги" />
+                                          <TableColumn fx:id="Lab2_entries_fullPrice_table" prefWidth="75.0" text="До сплати" />
+                                          <TableColumn fx:id="Lab2_entries_date_table" prefWidth="92.800048828125" text="Дата процедур" />
+                                      </columns>
+                                    </TableView>
+                                    <VBox layoutX="116.0" layoutY="189.0" prefHeight="26.0" prefWidth="100.0">
+                                       <children>
+                                          <ChoiceBox fx:id="Lab2_servise_choiseBox" prefWidth="150.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="116.0" layoutY="47.0" prefHeight="26.0" prefWidth="100.0">
+                                       <children>
+                                          <ChoiceBox fx:id="Lab2_client_choiseBox" prefHeight="26.0" prefWidth="110.0" />
+                                       </children>
+                                    </VBox>
+                                    <Label layoutX="48.0" layoutY="134.0" text="До сплати:" />
+                                    <Label fx:id="Lab2_payment_sum" layoutX="116.0" layoutY="134.0" prefHeight="18.0" prefWidth="62.0" />
+                                    <DatePicker fx:id="Lab2_entries_date" layoutX="115.0" layoutY="155.0" prefHeight="19.0" prefWidth="102.0" />
+                                    <Label layoutX="76.0" layoutY="159.0" text="Дата:" />
+                                    <Button fx:id="delete_entriesBtn" layoutX="482.0" layoutY="285.0" mnemonicParsing="false" onAction="#deleteEntry" prefHeight="38.0" prefWidth="77.0" text="Видалити" />
+                                    <Button fx:id="update_entriesBtn" layoutX="380.0" layoutY="285.0" mnemonicParsing="false" onAction="#EditEntries" prefHeight="38.0" prefWidth="86.0" text="Реадагувати" />
+                                    <Button fx:id="add_entriesBtn" layoutX="288.0" layoutY="285.0" mnemonicParsing="false" onAction="#addEntries" prefHeight="38.0" prefWidth="77.0" text="Добавити" />
+                                    <Label layoutX="90.0" layoutY="20.0" text="ID:" />
+                                    <TextField fx:id="Lab2_entries_ID_textField" layoutX="114.0" layoutY="15.0" prefHeight="26.0" prefWidth="104.0" promptText="ID" />
+                                    <Button fx:id="clear_entriesBtn" layoutX="65.0" layoutY="285.0" mnemonicParsing="false" onAction="#clearEntriesFields" prefHeight="38.0" prefWidth="77.0" text="Очистити" />
+                                    <TextField fx:id="enriesSearch" layoutX="291.0" layoutY="8.0" onKeyTyped="#entriesSearch" promptText="Пошук🔍" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <AnchorPane layoutX="-2.0" layoutY="-2.0" prefHeight="30.0" prefWidth="798.0">
+               <children>
+                  <Button fx:id="close" layoutX="746.0" layoutY="3.0" mnemonicParsing="false" onAction="#close" prefHeight="12.0" prefWidth="52.0" styleClass="close" stylesheets="@choisePageDes.css" text="Х" />
+                  <Button fx:id="minimize" layoutX="694.0" layoutY="3.0" mnemonicParsing="false" onAction="#minimize" prefHeight="26.0" prefWidth="52.0" styleClass="minimize" stylesheets="@choisePageDes.css" text="—" />
+                  <Button fx:id="backBtn" layoutY="2.0" mnemonicParsing="false" onAction="#backBtnEvent" styleClass="minimize" stylesheets="@choisePageDes.css" text="←Назад" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
